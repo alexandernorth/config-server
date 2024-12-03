@@ -18,7 +18,6 @@ package eventhandler
 
 import (
 	"context"
-	"fmt"
 
 	"github.com/henderiw/logger/log"
 	invv1alpha1 "github.com/sdcio/config-server/apis/inv/v1alpha1"
@@ -63,7 +62,7 @@ func (r *SecretForTargetEventHandler) add(ctx context.Context, obj runtime.Objec
 	}
 	//ctx := context.Background()
 	log := log.FromContext(ctx)
-	log.Info("event", "gvk", fmt.Sprintf("%s.%s", cr.APIVersion, cr.Kind), "name", cr.GetName())
+	//log.Info("event", "gvk", fmt.Sprintf("%s.%s", cr.APIVersion, cr.Kind), "name", cr.GetName())
 
 	// if the endpoint was not claimed, reconcile links whose condition is
 	// not true -> this allows the links to reevaluate the endpoints
